@@ -1,3 +1,7 @@
 public abstract class AddOnDecorator extends Beverage{
-    public abstract int getPumps();
+    Beverage beverage;
+    public AddOnDecorator(Beverage b) {
+        this.beverage = b;
+    }
+
 }

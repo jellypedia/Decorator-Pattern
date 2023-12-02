@@ -1,28 +1,16 @@
 public class ChocolateDecorator extends AddOnDecorator {
-    Beverage beverage;
-    int ctr = 0;
     public ChocolateDecorator(Beverage b) {
-        this.beverage = b;
-        getPumps();
+        super(b);
     }
 
     @Override
     public String getDesc() {
-        if(getPumps() != 1) {
-            return this.beverage.getDesc() + " with Chocolate";
-        } else {
-            return this.beverage.getDesc() + "(" + (getPumps()-1) + ")";
-        }
+        return beverage.getDesc() + " with Chocolate";
     }
 
     @Override
     public double cost() {
-        return this.beverage.cost() + 39.00;
+        return beverage.cost() + 39;
     }
 
-    @Override
-    public int getPumps() {
-        ctr++;
-        return ctr;
-    }
 }
